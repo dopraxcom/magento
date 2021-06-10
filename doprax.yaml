@@ -6,6 +6,7 @@ envs:
   - MAGENTO_DATABASE_PASSWORD: PASSWORD
   - MAGENTO_DATABASE_NAME: mydb
   - ALLOW_EMPTY_PASSWORD: yes
+  - MAGENTO_DATABASE_HOST: mysql
 
 services:
   - mysql:
