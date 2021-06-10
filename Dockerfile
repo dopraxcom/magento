@@ -1,1 +1,3 @@
+From bitnami/magento:latest
+
 
