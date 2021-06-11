@@ -29,3 +29,5 @@ services:
           mount: /usr/share/elasticsearch/data
       envs:
         - discovery.type: single-node
+        - bootstrap.memory_lock: true
+        - ES_JAVA_OPTS: -Xms8g -Xmx8g
