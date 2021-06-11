@@ -7,6 +7,8 @@ envs:
   - MAGENTO_DATABASE_NAME: mydb
   - ALLOW_EMPTY_PASSWORD: yes
   - MAGENTO_DATABASE_HOST: mysql
+  - MAGENTO_SEARCH_ENGINE: elasticsearch6
+  - MAGENTO_ELASTICSEARCH_HOST: elasticsearch
 
 services:
   - mysql:
@@ -19,3 +21,11 @@ services:
         - MYSQL_DATABASE: mydb
         - MYSQL_USER: dbuser01
         - MYSQL_PASSWORD: PASSWORD
+
+  - elasticsearch:
+      tag: 6.8
+      volumes:
+        - name: es_vol
+          mount: /usr/share/elasticsearch/data
+      envs:
+        - discovery.type: single-node
